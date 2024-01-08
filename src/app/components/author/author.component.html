@@ -1,0 +1,18 @@
+<div>
+  <label for="exampleFormControlInput1" class="form-label"></label>
+  <input type="text" [(ngModel)]="filterText" class="form-control" id="filterText" placeholder="Hadi Bir Yazar Arıyalım">
+</div>
+<div>
+    <table class="table">
+        <thead>
+          <tr>
+            <th scope="col">Yazarlar</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let author of authors.authors |filter:filterText">
+            <td scope="row">{{author}}</td>
+          </tr>
+        </tbody>
+      </table>
+</div>

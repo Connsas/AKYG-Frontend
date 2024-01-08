@@ -1,0 +1,17 @@
+<div>
+  <label for="exampleFormControlInput1" class="form-label"></label>
+  <input type="text" [(ngModel)]="filterText" class="form-control" id="filterText" placeholder="Hadi Bir Şiir Arıyalım">
+</div>
+<table class="table">
+  <thead>
+    <tr>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let title of titles |filter:filterText">
+      <th>{{ title }}</th>
+      <td><button class="btn btn-success" routerLink="poem/{{title}}">Şiire Git</button></td>
+    </tr>
+  </tbody>
+</table>
